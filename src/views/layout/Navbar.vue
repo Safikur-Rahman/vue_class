@@ -26,24 +26,35 @@
             <span class="fs-4">Pricing example</span>
           </a>
           <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
-            <a
+            
+            <router-link
               class="me-3 py-2 link-body-emphasis text-decoration-none"
-              href="#"
-              >Features</a
+              to="/"
             >
-            <a
-              class="me-3 py-2 link-body-emphasis text-decoration-none"
-              href="#"
-              >Enterprise</a
-            >
-            <a
-              class="me-3 py-2 link-body-emphasis text-decoration-none"
-              href="#"
-              >Support</a
-            >
-            <a class="py-2 link-body-emphasis text-decoration-none" href="#"
-              >Pricing</a
-            >
+              Home
+            </router-link>
+
+            <router-link
+            class="me-3 py-2 link-body-emphasis text-decoration-none"
+            to="/price"
+          >
+            Price
+          </router-link>
+
+            <router-link
+            class="me-3 py-2 link-body-emphasis text-decoration-none"
+            to="/compare-plans"
+          >
+            Compare Plans
+          </router-link>
+            <router-link
+            class="me-3 py-2 link-body-emphasis text-decoration-none"
+            to="/form"
+          >
+            Form
+          </router-link>
+
+            
           </nav>
         </div>
         

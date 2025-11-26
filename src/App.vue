@@ -1,8 +1,8 @@
 <script setup>
-import Compare from './views/layout/Compare.vue';
+// import Compare from './views/layout/Compare.vue';
 import Footer from './views/layout/Footer.vue';
 import Navbar from './views/layout/Navbar.vue';
-import Priceing from './views/pages/Priceing.vue';
+// import Priceing from './views/pages/Priceing.vue';
 
 
 </script>
@@ -117,9 +117,10 @@ import Priceing from './views/pages/Priceing.vue';
        <Navbar/>
       <main>
         <!-- ==========Priceing========= -->
-         <Priceing/>
+         <router-view></router-view>
+         <!-- <Priceing/> -->
          <!-- ===========Compare plans=============== -->
-        <Compare/>
+        <!-- <Compare/> -->
       </main>
       <Footer/>
     </div>
