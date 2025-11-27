@@ -17,11 +17,29 @@ import PriceCard from '../../components/PriceCard.vue';
         <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
           <div class="col">
             <!-- ======PriceCard====== -->
-            <PriceCard title="Free Plan"/>
+            <!-- <PriceCard title="Free Plan"/>
             <PriceCard title="Start"/>
             <PriceCard title="Standard plan" price="50" button="Charge"/>
-            <PriceCard title="Standard plan" price="50" button="Charge" btnClass="btn-warning" :isDisabled="true"/>
-            <PriceCard title="Standard plan" price="50" button="Charge" btnClass="btn-warning" :isDisabled="false">
+            <PriceCard title="Standard plan" price="50" button="Charge" btnClass="btn-warning" :isDisabled="true"/> -->
+            <PriceCard title="Standard plan" price="50" button="Charge" :id="1" btnClass="btn-warning" :isDisabled="false">
+              <ul class="list-unstyled mt-3 mb-4">
+                  <li>10 users included</li>
+                  <li>2 GB of storage</li>
+                  <li>Email support</li>
+                  <li>Help center access</li>
+                </ul>
+            
+           </PriceCard>
+            <PriceCard title="Standard plan" price="50" button="Charge" :id="2" btnClass="btn-warning" :isDisabled="false">
+              <ul class="list-unstyled mt-3 mb-4">
+                  <li>10 users included</li>
+                  <li>2 GB of storage</li>
+                  <li>Email support</li>
+                  <li>Help center access</li>
+                </ul>
+            
+           </PriceCard>
+            <PriceCard title="Standard plan" price="50" button="Charge" :id="3" btnClass="btn-warning" :isDisabled="false">
               <ul class="list-unstyled mt-3 mb-4">
                   <li>10 users included</li>
                   <li>2 GB of storage</li>
@@ -32,7 +50,7 @@ import PriceCard from '../../components/PriceCard.vue';
            </PriceCard>
 
           </div>
-          <div class="col">
+          <!-- <div class="col">
             <div class="card mb-4 rounded-3 shadow-sm">
               <div class="card-header py-3">
                 <h4 class="my-0 fw-normal">Free</h4>
@@ -92,7 +110,7 @@ import PriceCard from '../../components/PriceCard.vue';
                 </button>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
 
 </template>

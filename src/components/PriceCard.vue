@@ -14,13 +14,13 @@ import { defineProps } from 'vue';
       type:String,
       default:'btn-primary'
     },
-    isDisabled:Boolean
+    isDisabled:Boolean,
+    id:Number
    
   });
 </script>
 
 <template>
-   
           <div class="col">
             <div class="card mb-4 rounded-3 shadow-sm">
               <div class="card-header py-3">
@@ -32,11 +32,13 @@ import { defineProps } from 'vue';
                 </h1>
                 <slot>same as free plan </slot>
                 
-                <button
-                  type="button"
-                  :class='`w-100 btn btn-lg ${btnClass}`' :disabled="isDisabled">
+                 <router-link
+                  class="w-100 btn btn-primary  ${{ btnClass }}"
+                  :to="`/plan-details/${id}`"
+                >
                  {{button}}
-                </button>
+                </router-link>
+  
               </div>
             </div>
           </div>
