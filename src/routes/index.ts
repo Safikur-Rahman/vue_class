@@ -4,6 +4,7 @@ import Priceing from "../views/pages/Priceing.vue";
 import ComparePlans from "../views/pages/ComparePlans.vue";
 import Form from "../views/pages/Form.vue";
 import PlanDetails from "../views/pages/PlanDetails.vue";
+import PostManage from "../views/pages/posts/PostManage.vue";
 
 
 const router = createRouter({
@@ -14,6 +15,7 @@ const router = createRouter({
         {path: '/compare-plans', component: ComparePlans},
         {path: '/form', component: Form},
         {path: '/plan-details/:id', component: PlanDetails},
+        {path: '/posts', component: PostManage},
     ]
 });
 

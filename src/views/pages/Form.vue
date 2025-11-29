@@ -1,25 +1,32 @@
 <template>
     <div class="row">
-    <form @submit.prevent="formsSubmit2" class="col-6">
+    <form @submit.prevent="formsSubmit2" class="col-6 bg-success">
         <h3>User Form 2</h3>
         <div class="mb-3">
             <label for="exampleInputTitle1" class="form-label">Title</label>
             <input type="text" class="form-control" id="exampleInputTitle1" aria-describedby="nameHelp" v-model="post.title">
             <div id="nameHelp" class="form-text">Enter your Name</div>
+            <span class="text-danger">{{ error.title }}</span>
         </div>
         <div class="mb-3">
             <label for="exampleInputDetails1" class="form-label">Details</label>
             <textarea type="text" class="form-control" id="exampleInputDetails1" aria-describedby="detailsHelp" v-model="post.details"></textarea>
             <div id="detailsHelp" class="form-text">We'll never share your email with anyone else.</div>
+            <span class="text-danger">{{ error.details }}</span>
         </div>
         <div class="mb-3 form-check">
             <input type="checkbox" class="form-check-input" id="exampleCheck1" v-model="post.isReactive">
             <label class="form-check-label" for="exampleCheck1">Check me out</label>
         </div>
+        <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="exampleAgreeCheck2" v-model="agree1">
+            <label class="form-check-label" for="exampleAgreeCheck2">I agree </label><br>
+            <span class="text-danger">{{ error.agree1 }}</span>
+        </div>
         
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
-    <form @submit.prevent="formsSubmit" class="col-6">
+    <form @submit.prevent="formsSubmit" class="col-6 bg-primary">
         <h3>User Form 1</h3>
         <div class="mb-3">
             <label for="exampleInputName1" class="form-label">name</label>
@@ -52,7 +59,7 @@
                 Female
             </label>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-success">Submit</button>
     </form>
     </div>
 </template>
@@ -63,7 +70,8 @@ import type {Post} from '/src/interfaces/Post'
 const post = reactive<Post>({
     title: '',
     details: '',
-    isReactive: false
+    isReactive: false,
+    agree1: false
 });
 
 const name = ref({id: 1,lastName: ''})
@@ -77,12 +85,50 @@ const agree = ref(false)
         console.log("Gender:", gender.value)
         console.log("Agree:", agree.value)
     }
+    const error = reactive({
+        title: '',
+        details: '',
+        agree: '',
+        agree1: ''
+    });
     function formsSubmit2(){
-        // alert ('Form Submit');
+        const titleRegex = /^[a-zA-Z0-9 .-]+$/   // + means minimum 1
+        // const titleRegex = /^[a-zA-Z0-9 .-]{1,}$/   // {1,} means minimum 1 {1} Must be 1
         console.log("Title:", post.title)
         console.log("Details:", post.details)
         console.log("isReactive:", post.isReactive)
-       
+
+        // =======Form Validation (Title)=========\\
+
+        if(post.title===''){
+            error.title = 'Title is required';
+        }else if(post.title.length <2){
+            error.title = 'Title Must be 2 Characters';
+        }else if(!titleRegex.test(post.title)){
+            error.title = 'Title Must be Alphanumaric, space, . or -';
+        }else{
+            error.title = ''
+        }
+        
+         // =======Form Validation (Details)=========\\
+
+        if(post.details===''){
+            error.details = 'Title is required';
+        }else{
+            error.details = ''
+        }
+        if (post.agree !== true) {
+            error.agree1 = 'You must agree to continue';
+        } else {
+            error.agree1 = '';
+        }
+
+        
+        
+        if(error.title !=='' || error.details !=='' || error.agree !=='' ){
+            return;
+        }
+       alert("Submitted")
     }
 </script>
 
