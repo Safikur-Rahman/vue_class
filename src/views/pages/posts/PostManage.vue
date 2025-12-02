@@ -18,7 +18,7 @@
                 <td>
                     <div>
                         <button class="text-primary"><i class="fa-solid fa-user"></i>Edit</button>
-                        <button class="text-success">Details</button>
+                        <router-link :to="`/post/${item.id}/details/${item.userId}`" class="text-success">Details</router-link>
                         <button class="text-danger">Delete</button>
                     </div>
                 </td>
@@ -29,7 +29,7 @@
 </template>
 
 <script setup lang="ts">
-    import {ref} from 'vue';
+    import {reactive, ref} from 'vue';
     import axios from 'axios';
 
     interface PostFake{
@@ -39,12 +39,13 @@
         body: string
     }
 
-    let posts = ref<PostFake[]>([]);
+    // let posts = ref<PostFake[]>([]);
+    let posts = reactive<PostFake[]>([]);
     axios.get('https://jsonplaceholder.typicode.com/posts')
     .then(response => {
         // console.log(response.data);
-        posts.value = response.data;
-        // posts.push(...response.data)
+        // posts.value = response.data;
+        posts.push(...response.data)
         console.log(posts);
     })
     .catch(error => {

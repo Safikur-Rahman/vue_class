@@ -5,7 +5,7 @@ import ComparePlans from "../views/pages/ComparePlans.vue";
 import Form from "../views/pages/Form.vue";
 import PlanDetails from "../views/pages/PlanDetails.vue";
 import PostManage from "../views/pages/posts/PostManage.vue";
-
+import PostDetails from "../views/pages/posts/PostDetails.vue";
 
 const router = createRouter({
     history: createWebHistory(),
@@ -16,6 +16,8 @@ const router = createRouter({
         {path: '/form', component: Form},
         {path: '/plan-details/:id', component: PlanDetails},
         {path: '/posts', component: PostManage},
+        {path: '/post/:id/details/:userid', component: PostDetails},
+        // {path: '/post/:id', component: PostManage},
     ]
 });
 
