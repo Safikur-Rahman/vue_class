@@ -1,5 +1,10 @@
 <template>
     <h3>Post List</h3>
+    <div>
+        <router-link :to="`/post-create`" class="text-success">
+            Create Post
+        </router-link>
+    </div>
     <table class="table table-striped">
         <thead>
             
@@ -19,7 +24,7 @@
                     <div>
                         <button class="text-primary"><i class="fa-solid fa-user"></i>Edit</button>
                         <router-link :to="`/post/${item.id}/details/${item.userId}`" class="text-success">Details</router-link>
-                        <button class="text-danger">Delete</button>
+                        <router-link :to="`/post/${item.id}/delete/${item.userId}`" class="text-danger">Details</router-link>
                     </div>
                 </td>
             </tr>
