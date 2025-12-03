@@ -19,6 +19,7 @@ const router = createRouter({
         {path: '/posts', component: PostManage},
         {path: '/post-create', component: PostCreate},
         {path: '/post/:id/details/:userid', component: PostDetails},
+        {path: '/post/:id/details/:userid', component: PostDetails},
         // {path: '/post/:id', component: PostManage},
     ]
 });
