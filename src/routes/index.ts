@@ -7,6 +7,8 @@ import PlanDetails from "../views/pages/PlanDetails.vue";
 import PostManage from "../views/pages/posts/PostManage.vue";
 import PostDetails from "../views/pages/posts/PostDetails.vue";
 import PostCreate from "../views/pages/posts/PostCreate.vue";
+import CategoryManage from "../views/pages/categories/CategoryManage.vue";
+import CategoryCreate from "../views/pages/categories/CategoryCreate.vue";
 
 const router = createRouter({
     history: createWebHistory(),
@@ -18,6 +20,11 @@ const router = createRouter({
         {path: '/plan-details/:id', component: PlanDetails},
         {path: '/posts', component: PostManage},
         {path: '/post-create', component: PostCreate},
+        {path: '/post/:id/details/:userid', component: PostDetails},
+        {path: '/post/:id/details/:userid', component: PostDetails},
+        // -======================Category=============================
+        {path: '/categories', component: CategoryManage},
+        {path: '/category-create', component: CategoryCreate},
         {path: '/post/:id/details/:userid', component: PostDetails},
         {path: '/post/:id/details/:userid', component: PostDetails},
         // {path: '/post/:id', component: PostManage},

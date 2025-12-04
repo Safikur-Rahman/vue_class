@@ -59,6 +59,12 @@
           >
             Post
           </router-link>
+            <router-link
+            class="me-3 py-2 link-body-emphasis text-decoration-none"
+            to="/categories"
+          >
+            Category
+          </router-link>
 
             
           </nav>
