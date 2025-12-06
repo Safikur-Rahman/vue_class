@@ -9,6 +9,7 @@ import PostDetails from "../views/pages/posts/PostDetails.vue";
 import PostCreate from "../views/pages/posts/PostCreate.vue";
 import CategoryManage from "../views/pages/categories/CategoryManage.vue";
 import CategoryCreate from "../views/pages/categories/CategoryCreate.vue";
+import CategoryUpdate from "../views/pages/categories/CategoryUpdate.vue";
 
 const router = createRouter({
     history: createWebHistory(),
@@ -25,8 +26,7 @@ const router = createRouter({
         // -======================Category=============================
         {path: '/categories', component: CategoryManage},
         {path: '/category-create', component: CategoryCreate},
-        {path: '/post/:id/details/:userid', component: PostDetails},
-        {path: '/post/:id/details/:userid', component: PostDetails},
+        {path: '/category-update/:id', component: CategoryUpdate},
         // {path: '/post/:id', component: PostManage},
     ]
 });
