@@ -1,3 +1,7 @@
+<script setup>
+import { useCounterStore } from '../../store/counter'
+const countNav = useCounterStore()
+</script>
 <template>
     <header>
         <div
@@ -66,8 +70,29 @@
             Category
           </router-link>
 
-            
-          </nav>
+        </nav>
+        <span>
+          <!-- <h2>{{ countNav.count }}</h2> -->
+        </span>
+        <!-- <div style="position: relative; display: inline-block;">
+          <span style="
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: red;
+            color: white;
+            border-radius: 50%;
+            padding: 2px 6px;
+            font-size: 12px;
+          "><h2>{{ countNav.count }}</h2></span>
+        </div> -->
+        <button type="button" class="btn btn-primary position-relative">
+          <i class="bi bi-cart"></i> <!-- Bootstrap Icons cart -->
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+          <h2>{{ countNav.count }}</h2>
+            <!-- <span class="visually-hidden">items in cart</span> -->
+          </span>
+        </button>
         </div>
         
       </header>

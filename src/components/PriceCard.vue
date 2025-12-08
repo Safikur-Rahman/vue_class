@@ -18,6 +18,7 @@ import { defineProps } from 'vue';
     id:Number
    
   });
+  
 </script>
 
 <template>
