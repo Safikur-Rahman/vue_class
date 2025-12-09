@@ -1,5 +1,34 @@
 <template>
     <div class="row">
+        <!-- ===========without Form (Not Recommended)============ -->
+    <div>
+        <label for="" class="form-label">Number Update</label>
+        <input type="number" @click="updateNumber" class="form-control" v-model="count">
+        <button @click="updateNumber">update</button>
+    </div>
+        <!-- ===========Form (Recommended)============ -->
+    <form action="" @submit.prevent="updateNumber">
+        <label for="" class="form-label">Number Update</label>
+        <input type="number" class="form-control" v-model="count">
+        <div>
+            <button type="submit">Update</button>
+        </div>
+
+    </form>
+    <form action="" @submit.prevent="updateUser" >Form Test
+        <div class="mb-3">
+            <label for="" class="form-label">ID</label>
+            <input type="number" class="form-control" v-model="user.id">
+        </div>
+        <div class="mb-3">
+            <label for="" class="form-label">Name</label>
+            <input type="text" class="form-control" v-model="user.name">
+        </div>
+        <div>
+            <button type="submit">Update</button>
+        </div>
+
+    </form>
     <form @submit.prevent="formsSubmit2" class="col-6 bg-success">
         <h3>User Form 2</h3>
         <div class="mb-3">
@@ -67,12 +96,20 @@
 <script setup lang="ts">
 import { ref, reactive, isReactive } from 'vue'
 import type {Post} from '/src/interfaces/Post'
+import { useCounterStore } from '../../store/counter'
+import { useUserStore } from '../../store/user'
+import type { User } from '../../interfaces/User'
+const userData = useUserStore()
+// const user = ref(userData.user)
+const counter = useCounterStore();
+const count = ref(counter.count)
 const post = reactive<Post>({
     title: '',
     details: '',
     isReactive: false,
     agree1: false
 });
+const user = ref<User>(userData.user)
 
 const name = ref({id: 1,lastName: ''})
 const email = ref('')
@@ -129,6 +166,16 @@ const agree = ref(false)
             return;
         }
        alert("Submitted")
+    }
+
+    function updateNumber(){
+            counter.count = count.value;
+            counter.setLocal();
+    }
+    function updateUser(){
+        console.log(user.value);
+            userData.user = user.value;
+            userData.setLocal()
     }
 </script>
 
