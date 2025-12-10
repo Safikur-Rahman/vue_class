@@ -11,6 +11,10 @@ import CategoryManage from "../views/pages/categories/CategoryManage.vue";
 import CategoryCreate from "../views/pages/categories/CategoryCreate.vue";
 import CategoryUpdate from "../views/pages/categories/CategoryUpdate.vue";
 import ProductManage from "../views/pages/products/ProductManage.vue";
+// import ChatAI from "../views/pages/openAi/ChatAI.vue";
+import ChatAI from "../views/pages/openAi/ChatAI.vue";
+import ChatImageAI from "../views/pages/openAi/ChatImageAI.vue";
+// import ChatAI from "../views/pages/openAi/ChatAI.vue";
 
 const router = createRouter({
     history: createWebHistory(),
@@ -31,7 +35,10 @@ const router = createRouter({
         // -======================Product=============================
         {path: '/products', component: ProductManage},
         {path: '/category-create', component: CategoryCreate},
-        {path: '/category-update/:id', component: CategoryUpdate},
+        {path: '/category-update/:id', component: ChatAI},
+        // -======================Open AI=============================
+        {path: '/open-ai', component: ChatAI},
+        {path: '/open-image-ai', component: ChatImageAI},
         // {path: '/post/:id', component: PostManage},
     ]
 });
