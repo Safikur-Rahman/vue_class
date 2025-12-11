@@ -1,9 +1,9 @@
 <template>
     <h3>Product List</h3>
     <div>
-        <router-link :to="`/-create`" class="text-success">
+        <!-- <router-link :to="`/create`" class="text-success">
             Create Product
-        </router-link>
+        </router-link> -->
     </div>
     <table class="table table-striped">
         <thead>
@@ -35,8 +35,8 @@
                 <td>
                     <div>
                        
-                        <router-link :to="`/category-update/${item.id}`" class="text-success">Edit</router-link>
-                        <button @click="handleDelete(item.id)" class="text-danger">Delete</button>
+                        <!-- <router-link :to="`/category-update/${item.id}`" class="text-success">Edit</router-link>
+                        <button @click="handleDelete(item.id)" class="text-danger">Delete</button> -->
                     </div>
                 </td>
             </tr>

@@ -14,6 +14,7 @@ import ProductManage from "../views/pages/products/ProductManage.vue";
 // import ChatAI from "../views/pages/openAi/ChatAI.vue";
 import ChatAI from "../views/pages/openAi/ChatAI.vue";
 import ChatImageAI from "../views/pages/openAi/ChatImageAI.vue";
+import PproductManage from "../views/pages/view-product/PproductManage.vue";
 // import ChatAI from "../views/pages/openAi/ChatAI.vue";
 
 const router = createRouter({
@@ -36,6 +37,8 @@ const router = createRouter({
         {path: '/products', component: ProductManage},
         {path: '/category-create', component: CategoryCreate},
         {path: '/category-update/:id', component: ChatAI},
+        // -======================P Product=============================
+        {path: '/view-products', component: PproductManage},
         // -======================Open AI=============================
         {path: '/open-ai', component: ChatAI},
         {path: '/open-image-ai', component: ChatImageAI},
