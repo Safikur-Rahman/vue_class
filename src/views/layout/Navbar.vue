@@ -69,6 +69,12 @@ const countNav = useCounterStore()
           >
             Category
           </router-link>
+            <router-link
+            class="me-3 py-2 link-body-emphasis text-decoration-none"
+            to="/products"
+          >
+            Product
+          </router-link>
 
         </nav>
         <span>

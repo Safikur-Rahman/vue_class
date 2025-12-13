@@ -1,7 +1,7 @@
 <template>
     <h3>Product List</h3>
     <div>
-        <router-link :to="`/post-create`" class="text-success">
+        <router-link :to="`/product-create`" class="text-success">
             Create Product
         </router-link>
     </div>
@@ -36,7 +36,7 @@
                 <td>
                     <div>
                        
-                        <router-link  class="text-success">Edit</router-link>
+                        <!-- <router-link  class="text-success">Edit</router-link> -->
                         <button  class="text-danger">Delete</button>
                     </div>
                 </td>
