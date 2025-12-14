@@ -1,9 +1,10 @@
 <script setup>
 // import Compare from './views/layout/Compare.vue';
+import { useRoute } from 'vue-router';
 import Footer from './views/layout/Footer.vue';
 import Navbar from './views/layout/Navbar.vue';
 // import Priceing from './views/pages/Priceing.vue';
-
+const route = useRoute();
 
 </script>
 
@@ -114,7 +115,7 @@ import Navbar from './views/layout/Navbar.vue';
     </svg>
     <div class="container py-3">
       <!-- ========nav========= -->
-       <Navbar/>
+       <Navbar v-if="!route.meta.noLayout"/>
       <main>
         <!-- ==========Priceing========= -->
          <router-view></router-view>
@@ -122,7 +123,7 @@ import Navbar from './views/layout/Navbar.vue';
          <!-- ===========Compare plans=============== -->
         <!-- <Compare/> -->
       </main>
-      <Footer/>
+      <Footer v-if="!route.meta.noLayout"/>
     </div>
     <!-- <script
       src="../assets/dist/js/bootstrap.bundle.min.js"
