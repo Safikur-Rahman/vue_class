@@ -29,7 +29,7 @@
                 <td>{{ item.price }}</td>
                 <td>{{ item.discount }}</td>
                 <td>{{ item.quantity }}</td>
-                <td><img :src="`http://127.0.0.1:8080/${item.photo}`" alt="product" class="rounded-circle me-2" width="60"></td>
+                <td><img :src="`http://127.0.0.1:8000/${item.photo}`" alt="product" class="rounded-circle me-2" width="60"></td>
 
                 <!-- <td>{{item.is_inactive ? 'Active': 'not Active'}}</td> -->
                 <td>
@@ -50,11 +50,12 @@
     import axios from 'axios';
     import { useRouter } from 'vue-router';
     import type { Product } from '../../../interfaces/Product';
+import api from '../../../config/api';
     const router = useRouter();
     let products = reactive<Product[]>([]);
     function manageProduct(){
 
-        axios.get('http://127.0.0.1:8080/api/products')
+        api.get('products')
         .then(response => {
             // console.log(response.data);
             products.length = 0;

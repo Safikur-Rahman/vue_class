@@ -88,7 +88,7 @@ function formSubmit() {
 //   }
 
   
-  axios.post('http://127.0.0.1:8080/api/products', formData)
+  axios.post('http://127.0.0.1:8000/api/products', formData)
     .then(response => {
       console.log(response.data);
       if (response.status === 200) {

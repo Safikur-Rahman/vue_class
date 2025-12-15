@@ -1,6 +1,12 @@
 <script setup>
+import { useRoute } from 'vue-router';
 import { useCounterStore } from '../../store/counter'
-const countNav = useCounterStore()
+import api from '../../config/api';
+const countNav = useCounterStore();
+const router = useRoute()
+function logout(){
+  api.post('logout')
+}
 </script>
 <template>
     <header>
@@ -75,6 +81,7 @@ const countNav = useCounterStore()
           >
             Product
           </router-link>
+            <button type="submit" class="btn btn-info" @click="logout">Logout</button>
 
         </nav>
         <span>
