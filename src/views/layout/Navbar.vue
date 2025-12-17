@@ -1,11 +1,23 @@
 <script setup>
-import { useRoute } from 'vue-router';
+import { useRoute, useRouter } from 'vue-router';
 import { useCounterStore } from '../../store/counter'
 import api from '../../config/api';
 const countNav = useCounterStore();
-const router = useRoute()
-function logout(){
+const router = useRoute();
+const route = useRouter();
+function handleLogout(){
   api.post('logout')
+  .then(response => {
+    console.log(response.data);
+    if(response.status === 200){
+
+      localStorage.removeItem('token');
+      route.push('/login');
+    }
+  })
+  .catch(error => {
+    console.log(error);
+  })
 }
 </script>
 <template>
@@ -81,7 +93,7 @@ function logout(){
           >
             Product
           </router-link>
-            <button type="submit" class="btn btn-info" @click="logout">Logout</button>
+            <button type="submit" class="btn btn-info" @click="handleLogout">Logout</button>
 
         </nav>
         <span>

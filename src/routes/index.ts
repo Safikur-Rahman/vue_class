@@ -25,8 +25,8 @@ const router = createRouter({
         {path: '/', component: Home, name: 'Home' , meta: {auth: true}},
         {path: '/login', component: Login, name: 'login', meta: {auth: false, noLayout: true}}, //custom information ar jonno meta use kora hoi
         {path: '/register', component: Login, name: 'register', meta: {auth: false}}, //custom information ar jonno meta use kora hoi
-        {path: '/price', component: Priceing , meta: {guard: false}},
-        {path: '/compare-plans', component: ComparePlans , meta: {guard: false}},
+        {path: '/price', component: Priceing , meta: {guard: true}},
+        {path: '/compare-plans', component: ComparePlans , meta: {guard: true}},
         {path: '/form', component: Form , meta: {auth: true}},
         {path: '/plan-details/:id', component: PlanDetails , meta: {auth: true}},
         {path: '/posts', component: PostManage , meta: {auth: true}},
